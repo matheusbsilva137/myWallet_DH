@@ -4,14 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FragmentHome"
-    android:background="@color/colorRed">
+    tools:context=".FragmentHome">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="149dp"
-        android:layout_height="21dp"
-        android:text="@string/hello_blank_fragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/home"
+        android:textSize="60dp"
+        android:textStyle="bold"
+        android:textColor="@color/colorWine"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

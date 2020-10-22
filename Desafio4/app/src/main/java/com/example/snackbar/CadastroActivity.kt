@@ -28,7 +28,6 @@ class CadastroActivity : AppCompatActivity() {
         my_toolbar.title = "CADASTRAR"
         my_toolbar.navigationIcon = ContextCompat.getDrawable(this, R.drawable.ic_backbt)
 
-
         setSupportActionBar(my_toolbar)
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)

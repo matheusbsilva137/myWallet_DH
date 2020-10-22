@@ -10,35 +10,87 @@
         android:id="@+id/top_main"
         layout="@layout/top"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="120dp"
         />
+
+    <include
+        android:id="@+id/includetoolbar"
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="10dp" />
 
     <FrameLayout
         android:id="@+id/fl_fragment"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="405dp"
+        android:layout_height="500dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/top_main"/>
+        app:layout_constraintTop_toBottomOf="@+id/top_main" />
 
-    <Button
-        android:id="@+id/btn_home"
-        android:layout_width="107dp"
-        android:layout_height="38dp"
-        android:text="Home"
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintBottom_toBottomOf="@+id/top_main"
-        app:layout_constraintStart_toStartOf="@+id/top_main"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/includetoolbar">
 
-    <Button
-        android:id="@+id/btn_gastos"
-        android:layout_width="107dp"
-        android:layout_height="38dp"
-        android:layout_marginLeft="50dp"
-        android:text="Gastos"
-        app:layout_constraintBottom_toBottomOf="@+id/top_main"
-        app:layout_constraintStart_toEndOf="@+id/btn_home"
-        app:layout_constraintTop_toTopOf="parent" />
+        <Button
+            android:id="@+id/btn_home"
+            android:layout_width="107dp"
+            android:layout_height="38dp"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/linha"
+            android:drawableLeft="@drawable/ic_baseline_red_home_24"
+            android:text="@string/home"
+            android:textColor="@color/colorWine"
+            app:layout_constraintBottom_toBottomOf="@+id/top_main"
+            app:layout_constraintStart_toStartOf="@+id/top_main"
+            app:layout_constraintTop_toTopOf="parent" />
 
+        <Button
+            android:id="@+id/btn_entradas"
+            android:layout_width="107dp"
+            android:layout_height="38dp"
+            android:layout_marginLeft="15dp"
+            android:layout_weight="1"
+            android:background="@drawable/linha"
+            android:text="@string/entradas"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintBottom_toBottomOf="@+id/top_main"
+            app:layout_constraintStart_toEndOf="@+id/btn_home"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btn_gastos"
+            android:layout_width="107dp"
+            android:layout_height="38dp"
+            android:layout_marginLeft="15dp"
+            android:layout_weight="1"
+            android:background="@drawable/linha"
+            android:text="@string/gastos"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintBottom_toBottomOf="@+id/top_main"
+            app:layout_constraintStart_toEndOf="@+id/btn_home"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_backbt"
+        android:backgroundTint="@color/colorWine"
+        android:layout_margin="20dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
