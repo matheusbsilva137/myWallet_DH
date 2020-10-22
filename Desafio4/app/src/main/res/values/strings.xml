@@ -9,4 +9,6 @@
     <string name="btn_login">Login</string>
     <string name="btn_cad">Cadastrar</string>
     <string name="tv_info">Não tem conta? Cadastre-se</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
