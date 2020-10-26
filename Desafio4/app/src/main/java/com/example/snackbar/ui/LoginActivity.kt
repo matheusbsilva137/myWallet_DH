@@ -1,17 +1,15 @@
-package com.example.snackbar
+package com.example.snackbar.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-import androidx.core.content.ContextCompat
+import com.example.snackbar.R
 import com.example.snackbar.domain.Usuario
 import com.google.android.material.snackbar.Snackbar
-import kotlinx.android.synthetic.main.activity_cadastro.*
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.login_body.*
-import kotlinx.android.synthetic.main.toolbar.*
 
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

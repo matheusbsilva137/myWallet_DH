@@ -1,19 +1,14 @@
-package com.example.snackbar
+package com.example.snackbar.ui
 
-import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
 import android.view.Menu
 import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.ContextCompat
-import androidx.core.widget.addTextChangedListener
-import androidx.core.widget.doAfterTextChanged
-import androidx.core.widget.doOnTextChanged
+import com.example.snackbar.R
 import com.example.snackbar.domain.Usuario
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_cadastro.*
@@ -48,17 +43,33 @@ class CadastroActivity : AppCompatActivity() {
                 Snackbar.make(act_cadastro, "Complete os campos destacados", Snackbar.LENGTH_LONG)
                     .setAction("Ok", View.OnClickListener {}).show()
 
-                if (pass.isEmpty()) edPassword_cad.backgroundTintList = ContextCompat.getColorStateList(this, R.color.colorRed)
-                else edPassword_cad.backgroundTintList = ContextCompat.getColorStateList(this, R.color.colorAccent)
+                if (pass.isEmpty()) edPassword_cad.backgroundTintList = ContextCompat.getColorStateList(this,
+                    R.color.colorRed
+                )
+                else edPassword_cad.backgroundTintList = ContextCompat.getColorStateList(this,
+                    R.color.colorAccent
+                )
 
-                if (username.isEmpty()) edUserName_cad.backgroundTintList = ContextCompat.getColorStateList(this, R.color.colorRed)
-                else edUserName_cad.backgroundTintList = ContextCompat.getColorStateList(this, R.color.colorAccent)
+                if (username.isEmpty()) edUserName_cad.backgroundTintList = ContextCompat.getColorStateList(this,
+                    R.color.colorRed
+                )
+                else edUserName_cad.backgroundTintList = ContextCompat.getColorStateList(this,
+                    R.color.colorAccent
+                )
 
-                if (passRepet.isEmpty()) edPasswordRepeat_cad.backgroundTintList = ContextCompat.getColorStateList(this, R.color.colorRed)
-                else edPasswordRepeat_cad.backgroundTintList = ContextCompat.getColorStateList(this, R.color.colorAccent)
+                if (passRepet.isEmpty()) edPasswordRepeat_cad.backgroundTintList = ContextCompat.getColorStateList(this,
+                    R.color.colorRed
+                )
+                else edPasswordRepeat_cad.backgroundTintList = ContextCompat.getColorStateList(this,
+                    R.color.colorAccent
+                )
 
-                if (email.isEmpty()) edEmail_cad.backgroundTintList = ContextCompat.getColorStateList(this, R.color.colorRed)
-                else edEmail_cad.backgroundTintList  = ContextCompat.getColorStateList(this, R.color.colorAccent)
+                if (email.isEmpty()) edEmail_cad.backgroundTintList = ContextCompat.getColorStateList(this,
+                    R.color.colorRed
+                )
+                else edEmail_cad.backgroundTintList  = ContextCompat.getColorStateList(this,
+                    R.color.colorAccent
+                )
             } else if (edPassword_cad.text.toString() != edPasswordRepeat_cad.text.toString()) {
                 edPasswordRepeat_cad.text?.clear()
                 Snackbar.make(act_cadastro, "Repita a senha corretamente", Snackbar.LENGTH_LONG)

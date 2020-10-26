@@ -1,19 +1,17 @@
-package com.example.snackbar
+package com.example.snackbar.ui
 
 import android.content.Intent
-import android.graphics.drawable.ShapeDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
-import android.view.View
 import android.widget.Button
 import androidx.core.content.ContextCompat
-import com.google.android.material.snackbar.Snackbar
+import com.example.snackbar.R
+import com.example.snackbar.`interface`.ContractMainActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.toolbar.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), ContractMainActivity {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -97,34 +95,35 @@ class MainActivity : AppCompatActivity() {
 
     override fun onBackPressed() {
         var fragAtual = this.supportFragmentManager.findFragmentByTag("home")
-        if (fragAtual != null && fragAtual.isVisible()){
-            tirarDestaqueBotao(btn_home)
-        }else{
+        if (fragAtual != null && fragAtual.isVisible()) tirarDestaqueBotao(btn_home)
+        else{
             fragAtual = this.supportFragmentManager.findFragmentByTag("entradas")
-            if (fragAtual != null && fragAtual.isVisible()){
-                tirarDestaqueBotao(btn_entradas)
-            }else{
-                tirarDestaqueBotao(btn_gastos)
-            }
+            if (fragAtual != null && fragAtual.isVisible()) tirarDestaqueBotao(btn_entradas)
+            else tirarDestaqueBotao(btn_gastos)
         }
 
         super.onBackPressed()
 
         var novoFrag = this.supportFragmentManager.findFragmentByTag("home")
-        if (novoFrag != null && novoFrag.isVisible()){
-            destacarBotao(btn_home)
-        }else{
+        if (novoFrag != null && novoFrag.isVisible()) destacarBotao(btn_home)
+        else{
             novoFrag = this.supportFragmentManager.findFragmentByTag("entradas")
-            if (novoFrag != null && novoFrag.isVisible()){
-                destacarBotao(btn_entradas)
-            }else{
+            if (novoFrag != null && novoFrag.isVisible()) destacarBotao(btn_entradas)
+            else{
                 novoFrag = this.supportFragmentManager.findFragmentByTag("gastos")
-                if (novoFrag != null && novoFrag.isVisible()){
-                    destacarBotao(btn_gastos)
-                }else{
-                    finish()
-                }
+                if (novoFrag != null && novoFrag.isVisible()) destacarBotao(btn_gastos)
+                else finish()
             }
+        }
+    }
+
+    override fun callFragDetailGastos() {
+        val fragDetailGastos = DetailGastosFragment.newInstance("TEXTO")
+
+        supportFragmentManager.beginTransaction().apply {
+            replace(R.id.fl_details, fragDetailGastos)
+            addToBackStack(null)
+            commit()
         }
     }
 
